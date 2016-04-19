@@ -110,11 +110,32 @@ function jamgraphickit_widgets_init() {
 }
 add_action( 'widgets_init', 'jamgraphickit_widgets_init' );
 
+
+/**===============================================================================================
+ * STUDY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ ====================================================================================================*/
+/* RICH SNIPPET ON HOMEPAGE ONLY, AS REQUIRED BY GOOGLE. */
+function jamgraphickit_enqueue_front_page_scripts() {
+    if( is_front_page() )
+    {
+        ?>
+        <head itemscope itemtype="http://schema.org/WebSite">
+			<title itemprop='JAM Graphic'>JAM Graphic</title>
+			<link rel="canonical" href="http://jam-graphic.com/" itemprop="url">
+        <?php
+    }
+}
+add_action( 'wp_enqueue_scripts', 'jamgraphickit_enqueue_front_page_scripts' );
+
+
+
+
+
 /**
  * Enqueue scripts and styles.
  */
 function jamgraphickit_scripts() {
-	wp_enqueue_style( 'jamgraphickit-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'jamgraphickit-style', get_stylesheet_uri());
 	wp_enqueue_style( 'material', get_template_directory_uri() . '/styles/material.css', false, '1.0', 'all' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', false, '1.0', 'all' );
 	wp_enqueue_style( 'home', get_template_directory_uri() . '/styles/home.css', false, '1.0', 'all' );
