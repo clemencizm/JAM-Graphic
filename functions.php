@@ -73,7 +73,7 @@ function jamgraphickit_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'jamgraphickit_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'f6f6f6',
 		'default-image' => '',
 	) ) );
 }
@@ -111,26 +111,6 @@ function jamgraphickit_widgets_init() {
 add_action( 'widgets_init', 'jamgraphickit_widgets_init' );
 
 
-/**===============================================================================================
- * STUDY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- ====================================================================================================*/
-/* RICH SNIPPET ON HOMEPAGE ONLY, AS REQUIRED BY GOOGLE. */
-function jamgraphickit_enqueue_front_page_scripts() {
-    if( is_front_page() )
-    {
-        ?>
-        <head itemscope itemtype="http://schema.org/WebSite">
-			<title itemprop='JAM Graphic'>JAM Graphic</title>
-			<link rel="canonical" href="http://jam-graphic.com/" itemprop="url">
-        <?php
-    }
-}
-add_action( 'wp_enqueue_scripts', 'jamgraphickit_enqueue_front_page_scripts' );
-
-
-
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -152,10 +132,6 @@ function jamgraphickit_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'jamgraphickit_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
