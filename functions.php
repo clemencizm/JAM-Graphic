@@ -73,7 +73,7 @@ function jamgraphickit_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'jamgraphickit_custom_background_args', array(
-		'default-color' => 'f6f6f6',
+		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
@@ -114,11 +114,12 @@ add_action( 'widgets_init', 'jamgraphickit_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function jamgraphickit_scripts() {
+function jamgraphickit_scripts() {	
 	wp_enqueue_style( 'jamgraphickit-style', get_stylesheet_uri());
 	wp_enqueue_style( 'material', get_template_directory_uri() . '/styles/material.css', false, '1.0', 'all' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', false, '1.0', 'all' );
+	wp_enqueue_style( 'material', get_template_directory_uri() . '/styles/styleguide.css', false, '1.0', 'all' );
 	wp_enqueue_style( 'home', get_template_directory_uri() . '/styles/home.css', false, '1.0', 'all' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/portefolio.css', false, '1.0', 'all' );
 
 	wp_enqueue_script( 'jamgraphickit-navigation', get_template_directory_uri() . '/scripts/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'jamgraphickit-skip-link-focus-fix', get_template_directory_uri() . '/scripts/skip-link-focus-fix.js', array(), '20151215', true );
