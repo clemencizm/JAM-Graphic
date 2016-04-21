@@ -12,7 +12,16 @@
 ?>
 
 		<footer id="colophon" class="site-footer mdl-mega-footer" role="contentinfo">
-			<div class="site-info mdl-mega-footer--middle-section">
+			<div class="mdl-mega-footer--top-section">
+				<div class="mdl-mega-footer--right-section">
+					<a href="#top">
+						<button class="mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+			              <i class="material-icons">expand_more</i>
+			            </button>
+					</a>
+				</div>
+	        </div><!-- .site-info -->
+	        <div class="site-info mdl-mega-footer--middle-section">
 				<div class="mdl-mega-footer--drop-down-section">
 		            <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
 		            <h1 class="mdl-mega-footer--heading">Features</h1>
@@ -46,7 +55,7 @@
 		                <li><a href="#" title="Tumblr" alt="tumblr"><i></i></a></li>
 		            </ul>
 		        </div>
-	        </div><!-- .site-info -->
+	        </div>
 	        <div class="mdl-mega-footer--bottom-section">
 				<p>
 					Para el website <a href="http://jamgraphic.com">jamgraphic.com</a> se creó el tema <?php printf( esc_html__( '%1$s desarrollado en base a %2$s', 'jamgraphickit' ), 'JamgraphicKit', '<a href="http://underscores.me/" rel="designer">underscores.me</a>' ); ?>, <a href="https://getmdl.io/" rel="nofollow">Material Design Lite</a>, y <a href="https://developers.google.com/web/fundamentals/getting-started/web-starter-kit/setting-up?hl=en" rel="nofollow">Web Starter Kit</a>
