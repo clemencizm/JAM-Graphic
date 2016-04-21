@@ -47,50 +47,67 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileColor" content="#37474f">
 
     <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#333">
+    <meta name="theme-color" content="#37474f">
 
     <!-- Extention styles from Material -->
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.teal-green.min.css" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<!--[if lt IE 9]>
-		   <link rel="stylesheet" href="app/styles/ie.css">
-		<![endif]-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-indigo.min.css">
+
+	<!--[if lt IE 9]>
+	   <link rel="stylesheet" href="app/styles/ie.css">
+	<![endif]-->
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class("mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base"); ?> >
+<body <?php body_class(); ?> >
 	<div id="page" class="site mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'jamgraphickit' ); ?></a>
 
-		<header id="masthead" class="site-header mdl-layout__header mdl-layout__header--scroll mdl-color--primary" role="banner">
-			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-	        </div>
-	        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
+		<header id="masthead" class="site-header mdl-layout__header mdl-layout__header--waterfall portfolio-header" role="banner">
+			<div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo">
+                    	<img src="<?php echo get_template_directory_uri(); ?>/images/logo-jam-graphic-diseno-digital.png" width="250px" height="90px" alt="Logo de Jam Graphic portafolio digital de clemencizm">
+                    </div>
+                	<?php
+						if ( is_front_page() && is_home() ) : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+						endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+					endif; ?>
+              
+					<nav id="site-navigation" class="main-navigation mdl-navigation mdl-typography--body-1-force-preferred-font" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</nav><!-- #site-navigation -->
+				</span>
+
 			</div><!-- .site-branding -->
-	        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-	        </div>
-
-			<nav id="site-navigation" class="main-navigation mdl-js-ripple-effect mdl-color--primary-dark" role="navigation">
-				<button class="menu-toggle mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jamgraphickit' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+	       
+	       <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+				<nav id="site-navigation" class="main-navigation mdl-navigation mdl-typography--body-1-force-preferred-font" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div>
 		</header><!-- #masthead -->
+
+		<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <div class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                Portafolio de una 
+            </div>
+        </div>
 
 		<main id="content" class="site-content mdl-layout__content" role="main">
